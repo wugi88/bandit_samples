@@ -58,8 +58,8 @@
         </form>
         &nbsp;&nbsp;&nbsp;&nbsp; <strong>환자 숫자:</strong>
         <form>
-            <input type="range" name="step_form" min="0" max="10000" value="50" oninput="this.form.step_input.value=this.value" id="patients_slider">
-            <input type="number" name="step_input" min="0" max="10000" value="50" oninput="this.form.step_form.value=this.value">
+            <input type="range" name="step_form" min="0" max="10000" value="80" oninput="this.form.step_input.value=this.value" id="patients_slider">
+            <input type="number" name="step_input" min="0" max="10000" value="80" oninput="this.form.step_form.value=this.value">
         </form>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <button type="button" class="button" onclick="gen_bandit_problem($('#drugs_slider').val())">Play</button>
@@ -292,32 +292,6 @@
             return choice
         }
 
-
-        //    function ucb_choice(arm_counts, timestep) {
-        //        // ucb_choice uses the UCB algoirthm to choose an arm.
-        //        //
-        //        // Args:
-        //        //  arm_counts - n_arms x 2 - array of observed counts
-        //        //  timestep - int - number of timesteps elapsed
-        //        //
-        //        // Returns:
-        //        //  choice - int - arm to be pulled at the next timestep (0 index)
-        //        var p_max = -1
-        //        var choice = -1
-        //        for (i = 0; i < arm_counts.length; i++) {
-        //            var n_pull = (arm_counts[i][0] + arm_counts[i][1])
-        //            if (n_pull < 0.5) {
-        //                n_pull = 1
-        //            }
-        //            var p_hat = arm_counts[i][0] / n_pull
-        //            var p_upper = p_hat + Math.sqrt(Math.log(timestep) / n_pull)
-        //            if (p_upper > p_max) {
-        //                p_max = p_upper
-        //                choice = i
-        //            }
-        //        }
-        //        return choice
-        //    }
 
         //------------------------------------------------------------------------------
         // Now let's do a simple implementation of the bandit problem
